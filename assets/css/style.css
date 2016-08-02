@@ -29,8 +29,8 @@ button {
   border-radius: 4px;
   -khtml-border-radius: 4px;
   background: black;
-  color: #fb573b;
-  border: solid 1px #fdf9f3;
+  color: #c7b175;
+  border: solid 1px #c7b175;
   text-decoration: none;
   cursor: pointer;
   font-family: deadzone;
@@ -46,7 +46,7 @@ button:hover {
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background: #fb573b;
-  border: solid 1px #fff;
+  border: solid 1px black;
   color: black;
 }
 
@@ -83,6 +83,7 @@ img {
   cursor:pointer;
   overflow: hidden;
   outline:none;
+  color: #c7b175;
 }
 
 #startButton {
@@ -94,7 +95,7 @@ img {
     text-align: center;
     font-family: 'Prompt', cursive !important;
     font-size: 30px;
-    color: white;
+    color: #fdf9f3;
     text-shadow: 0px 0px;
 }
 
@@ -103,7 +104,7 @@ img {
     font-family: 'Codystar', cursive;
     font-size: 30px;
     text-shadow: 0px 0px;
-    color: white;
+    color: #fdf9f3;
 }
 
 #title {
@@ -151,6 +152,14 @@ img {
     font-size: 50px;
 }
 
+.outtaTime {
+  color: #fb573b;
+  font-family: kingfont;
+  text-shadow: 1px 1px #fdf9f3;
+  font-size: 65px;
+
+}
+
 .player{
   margin: 50px 0;
 }
@@ -170,11 +179,11 @@ img {
     font-size: 20px;
     margin: 50px auto;
     font-family: deadzone;
-    color: #fb573b;
+    color: ;
 }
 
 .wrongAns {
-    color: #fb573b;
+    color: #c7b175;
     font-family: kingfont;
     text-shadow: 1px 1px #fdf9f3;
     font-size: 65px;

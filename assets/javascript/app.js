@@ -99,6 +99,7 @@ function showQuestion(questionId) {
  		$('#jumbotron').css("margin-top", "0px");
  		$('#timer').html(+counter);
  		$('#title').empty();
+    $('#title2').empty();
  		$('#announce').empty();
  		$('#1').remove();
     $('#2').remove();
@@ -157,7 +158,7 @@ function wrongAnswer(questionId, question) {
 
 function outofTime(questionId, question) {
 	$('#announce').html(
-	"<div class='correctAns'>" + "Outta Time!" + "</div>")
+	"<div class='outtaTime'>" + "No Time Remains!" + "</div>")
 	$('#mainEvent').html("<div class='question'>" + "The correct answer is &nbsp;"+question.choices[question.answer] + "</div>" + "<img src='" + question.wrongImage + "'>")
     setTimeout(function() {
     	showQuestion(questionId + 1);
