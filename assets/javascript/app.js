@@ -68,7 +68,7 @@ var questBank = [
 
 //VARIABLES FOR KEEPING SCORE/QUESTIONS
 $(document).ready(function() {
-	var counter = 15;
+	var counter = 16;
 	var selection = false;
 	var correctA = 0;
 	var incorrectA = 0;
@@ -85,7 +85,7 @@ function showQuestion(questionId) {
 	if (questionId === questBank.length) {
 		score();
 } else {
-	counter = 15;
+	counter = 16;
  	var question = questBank[questionId];
  	selection = false;
 	var countDown = setInterval(function() {
@@ -95,7 +95,9 @@ function showQuestion(questionId) {
  		$('#timer').html(+counter);
  		$('#title').empty();
  		$('#announce').empty();
- 		$('#fatty').remove();
+ 		$('#1').remove();
+    $('#2').remove();
+    $('#fatty').remove();
  		$('#mainEvent').html("<div class='question'>"+question.question+"</div>")
  		for (var i = 0; i < question.choices.length; i++) {
  			$('#mainEvent').append(
@@ -135,7 +137,7 @@ function rightAnswer(questionId, question) {
 	"<div class='question'>" + "</div>" + "<img src='" + question.image + "'></div>")
 	setTimeout(function() {
 		showQuestion(questionId + 1)
-	}, 1800);
+	}, 1700);
 }
 
 function wrongAnswer(questionId, question) {
@@ -154,7 +156,7 @@ function outofTime(questionId, question) {
 	$('#mainEvent').html("<div class='question'>" + "The correct answer is &nbsp;"+question.choices[question.answer] + "</div>" + "<img src='" + question.wrongImage + "'>")
     setTimeout(function() {
     	showQuestion(questionId + 1);
-    },2400);
+    },2500);
 }
 
 function score() {
@@ -168,7 +170,7 @@ $('#mainEvent').on('click','.restart', function() {
 	restart();
 });
 function restart() {
-	var counter = 15;
+	var counter = 16;
 	var selection = false;
 	var correctA = 0;
 	var incorrectA = 0;

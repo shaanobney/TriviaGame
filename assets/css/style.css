@@ -8,6 +8,11 @@
     src: url("../css/deadzone.ttf");
 }
 
+@font-face {
+    font-family: shatter;
+    src: url("../css/shatter.ttf");
+}
+
 body {
   background: url("../images/background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -24,12 +29,12 @@ button {
   border-radius: 4px;
   -khtml-border-radius: 4px;
   background: black;
-  color: crimson;
-  border: solid 1px #fff;
+  color: #fb573b;
+  border: solid 1px #fdf9f3;
   text-decoration: none;
   cursor: pointer;
   font-family: kingfont;
-  text-shadow: 1px 1px #e5e5e5;
+  text-shadow: 1px 1px #fdf9f3;
   text-rendering: optimizeLegibility;
   padding: 10px 6px;
   width: 110px;
@@ -42,9 +47,16 @@ button:hover {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background: crimson;
+  background: #fb573b;
   border: solid 1px #fff;
   color: black;
+}
+
+hr {
+  height:2px;
+  border-width:0;
+  color: #fb573b;
+  background-color: #fb573b;
 }
 
 img {
@@ -88,7 +100,7 @@ img {
 }
 
 #title {
-    font-color: crimson;
+    font-color: #fb573b;
 }
 
 .container {
@@ -108,8 +120,8 @@ img {
 .choices {
     font-family: 'Prompt', sans-serif;
     font-size: 20px;
-    color: #e5e5e5;
-    text-shadow: 1px 1px black;
+    color: #c7b175;
+    text-shadow: 2px 2px black;
 }
 
 .choices:hover .choices:focus, .choices:active {
@@ -121,9 +133,9 @@ img {
     font-size: 40px;
     opacity: .93;
     background-color: black;
-    color: crimson;
+    color: #fb573b;
     font-family: kingfont;
-    text-shadow: 1px 1px #e5e5e5;
+    text-shadow: 1px 1px #fdf9f3;
     text-rendering: optimizeLegibility;
 } 
 
@@ -133,23 +145,23 @@ img {
 
 .question {
     font-family: deadzone;
-    font-size: 25px;
+    font-size: 35px;
     color: crimson;
-    text-shadow: 1px 1px black;
+    text-shadow: 2px 2px black;
 }
 
 .restart {
     font-size: 20px;
     margin: 50px auto;
     font-family: kingfont;
-    color: crimson;
-    text-shadow: 1px 1px #ff0000;
+    color: #fdf9f3;
+    text-shadow: 1px 1px #fdf9f3;
     text-rendering: optimizeLegibility;
 }
 
 .wrongAns {
-    color: crimson;
+    color: #fb573b;
     font-family: kingfont;
-    text-shadow: 1px 1px white;
+    text-shadow: 1px 1px #fdf9f3;
     font-size: 65px;
 }
