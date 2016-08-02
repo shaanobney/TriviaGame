@@ -1,4 +1,8 @@
+
+
+
 //QUESTION BANK WITH ASSOCIATED FILES
+var york = new Audio('york.mp3');
 
 var questBank = [
   {
@@ -37,8 +41,8 @@ var questBank = [
     question:"The script for this film was chosen over E.T. by Columbia Pictures",
     choices: ['Dark Star', 'Halloween', 'Ghosts of Mars', 'Starman'],
     answer: 3,
-    image: 'assets/images/starman.gif',
-    wrongImage: 'assets/images/starmanwr.gif',
+    image: 'assets/images/starmanwr.gif',
+    wrongImage: 'assets/images/starman.gif',
   },
 
   {
@@ -76,6 +80,7 @@ $(document).ready(function() {
 
  $('#startButton').on('click', function() {
         showQuestion(0);
+        york.play().loop=false;
     });
 
 
@@ -175,8 +180,14 @@ function restart() {
 	var correctA = 0;
 	var incorrectA = 0;
 	var Unanswered = 0;
+  york.load();
 	showQuestion(0);
 }
 })
+
+$('#pause').on('click', function() {
+  york.volume = 0;
+});
+
 
 

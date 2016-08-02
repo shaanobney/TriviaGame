@@ -19,8 +19,8 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  -webkit-font-smoothing: subpixel-antialiased !important;
   height: 100%;
-/*  font-size: ;*/
 }
 
 button {
@@ -33,9 +33,7 @@ button {
   border: solid 1px #fdf9f3;
   text-decoration: none;
   cursor: pointer;
-  font-family: kingfont;
-  text-shadow: 1px 1px #fdf9f3;
-  text-rendering: optimizeLegibility;
+  font-family: deadzone;
   padding: 10px 6px;
   width: 110px;
   margin: 10px;
@@ -78,6 +76,15 @@ img {
     margin: 130px;
 }
 
+#pause {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
 #startButton {
     font-size: 20px;
     margin: 30px auto;
@@ -103,12 +110,12 @@ img {
     font-color: #fb573b;
 }
 
-.container {
+/*.container {
     padding-right:60px;
     padding-left:60px;
     margin-right:auto;
     margin-left:auto
-}
+}*/
 
 .correctAns {
     color: green;
@@ -119,7 +126,7 @@ img {
 
 .choices {
     font-family: 'Prompt', sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     color: #c7b175;
     text-shadow: 2px 2px black;
 }
@@ -137,10 +144,19 @@ img {
     font-family: kingfont;
     text-shadow: 1px 1px #fdf9f3;
     text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
 } 
 
 .jumbotron h1 {
     font-size: 50px;
+}
+
+.player{
+  margin: 50px 0;
+}
+
+.pause {
+
 }
 
 .question {
@@ -153,10 +169,8 @@ img {
 .restart {
     font-size: 20px;
     margin: 50px auto;
-    font-family: kingfont;
-    color: #fdf9f3;
-    text-shadow: 1px 1px #fdf9f3;
-    text-rendering: optimizeLegibility;
+    font-family: deadzone;
+    color: #fb573b;
 }
 
 .wrongAns {
