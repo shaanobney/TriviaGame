@@ -68,10 +68,6 @@ img {
     font-size: 40px;
 }
 
-#clickHere {
-
-}
-
 #fatty {
     margin: 130px;
 }
@@ -125,14 +121,14 @@ img {
     font-size: 65px;
 }
 
-.choices {
+.ansPoss {
     font-family: 'Prompt', sans-serif;
     font-size: 25px;
     color: #c7b175;
     text-shadow: 2px 2px black;
 }
 
-.choices:hover .choices:focus, .choices:active {
+.ansPoss:hover .ansPoss:focus, .ansPoss:active {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
