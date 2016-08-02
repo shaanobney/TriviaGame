@@ -6,7 +6,7 @@ var york = new Audio('york.mp3');
 
 var questBank = [
   {
-    question: "The iconic mask this movie's villian wears was actually a Captain Kirk mask painted white.",
+    question: "The iconic mask this movie's villian wears was actually a Captain Kirk mask painted white",
     choices: ['The Fog', 'Prince of Darkness', 'Halloween', 'The Thing', 'Vampires'],
     answer: 2,
     image: 'assets/images/halloween.gif',
@@ -14,7 +14,7 @@ var questBank = [
   },
 
   {
-    question: "The model city used in this movie was later re-used in Blade Runner?",
+    question: "The model city used in this movie was later re-used in Blade Runner",
     choices: ['Big Trouble In Little China', 'Assault On Precinct 13', 'Escape From New York', 'Escape from L.A.'],
     answer: 2,
     image: 'assets/images/newyork.gif',
@@ -30,7 +30,7 @@ var questBank = [
   },
 
   {
-    question: "This film is based on the sci-fi novel 'Who Goes There?'",
+    question: "This film is based on the sci-fi novel 'Who Goes There'",
     choices: ['Dark Star','In the Mouth Of Madness', 'The Thing', 'Ghosts of Mars'],
     answer: 2,
     image: "assets/images/thing.gif",
