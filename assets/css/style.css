@@ -1,0 +1,155 @@
+@font-face {
+    font-family: kingfont;
+    src: url("../css/king.ttf");
+}
+
+@font-face {
+    font-family: deadzone;
+    src: url("../css/deadzone.ttf");
+}
+
+body {
+  background: url("../images/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+/*  font-size: ;*/
+}
+
+button {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -khtml-border-radius: 4px;
+  background: black;
+  color: crimson;
+  border: solid 1px #fff;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: kingfont;
+  text-shadow: 1px 1px #e5e5e5;
+  text-rendering: optimizeLegibility;
+  padding: 10px 6px;
+  width: 110px;
+  margin: 10px;
+  outline: none;
+  margin-left: 25px;
+}
+
+button:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background: crimson;
+  border: solid 1px #fff;
+  color: black;
+}
+
+img {
+    width: 635px;
+    height: 268px;
+    opacity: 100%;
+}
+
+#announce {
+    text-align: center;
+    font-size: 40px;
+}
+
+#clickHere {
+
+}
+
+#fatty {
+    margin: 130px;
+}
+
+#startButton {
+    font-size: 20px;
+    margin: 30px auto;
+}
+
+#time {
+    text-align: center;
+    font-family: 'Prompt', cursive !important;
+    font-size: 30px;
+    color: white;
+    text-shadow: 0px 0px;
+}
+
+#timer {
+    text-align: center;
+    font-family: 'Codystar', cursive;
+    font-size: 30px;
+    text-shadow: 0px 0px;
+    color: white;
+}
+
+#title {
+    font-color: crimson;
+}
+
+.container {
+    padding-right:60px;
+    padding-left:60px;
+    margin-right:auto;
+    margin-left:auto
+}
+
+.correctAns {
+    color: green;
+    font-family: kingfont;
+    text-shadow: 1px 1px white;
+    font-size: 65px;
+}
+
+.choices {
+    font-family: 'Prompt', sans-serif;
+    font-size: 20px;
+    color: #e5e5e5;
+    text-shadow: 1px 1px black;
+}
+
+.choices:hover .choices:focus, .choices:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.jumbotron {
+    font-size: 40px;
+    opacity: .93;
+    background-color: black;
+    color: crimson;
+    font-family: kingfont;
+    text-shadow: 1px 1px #e5e5e5;
+    text-rendering: optimizeLegibility;
+} 
+
+.jumbotron h1 {
+    font-size: 50px;
+}
+
+.question {
+    font-family: deadzone;
+    font-size: 25px;
+    color: crimson;
+    text-shadow: 1px 1px black;
+}
+
+.restart {
+    font-size: 20px;
+    margin: 50px auto;
+    font-family: kingfont;
+    color: crimson;
+    text-shadow: 1px 1px #ff0000;
+    text-rendering: optimizeLegibility;
+}
+
+.wrongAns {
+    color: crimson;
+    font-family: kingfont;
+    text-shadow: 1px 1px white;
+    font-size: 65px;
+}
