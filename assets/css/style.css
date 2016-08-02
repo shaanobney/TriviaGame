@@ -13,11 +13,8 @@
     src: url("../css/shatter.ttf");
 }
 
-body {
+html, body {
   background: url("../images/background.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   -webkit-font-smoothing: subpixel-antialiased !important;
   height: 100%;
@@ -80,6 +77,8 @@ img {
   overflow: hidden;
   outline:none;
   color: #c7b175;
+  position: absolute;
+  bottom: 50px;
 }
 
 #startButton {
