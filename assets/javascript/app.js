@@ -105,10 +105,9 @@ function showQuestion(questionId) {
     $('#2').remove();
     $('#fatty').remove();
  		$('#mainEvent').html("<div class='question'>"+question.question+"</div>")
- 		for (var i = 0; i < question.ansPoss.length; i++) {
- 			$('#mainEvent').append(
-			"<div class='ansPoss' data-val='"+i+"'>"+question.ansPoss[i]+"</button>"+"</div>");
-	}
+    for (var i = 0; i < question.ansPoss.length; i++) {
+ 			$('#mainEvent').append("<div class='ansPoss' data-val='"+i+"'>"+question.ansPoss[i]+"</button>"+"</div>");
+    }
 	if (selection === false) {
 		$('.ansPoss').on('click', function() {
 			selection === true;
@@ -137,30 +136,25 @@ function showQuestion(questionId) {
 }
 
 function rightAnswer(questionId, question) {
-	$('#announce').html(
-	"<div class='correctAns'>" + "Correct!" + "</div>")
-	$('#mainEvent').html(
-	"<div class='question'>" + "</div>" + "<img src='" + question.image + "'></div>")
-	setTimeout(function() {
-		showQuestion(questionId + 1)
+	$('#announce').html("<div class='correctAns'>" + "Correct!" + "</div>")
+	$('#mainEvent').html("<div class='question'>" + "</div>" + "<img src='" + question.image + "'></div>")
+  setTimeout(function() {
+    showQuestion(questionId + 1)
 	}, 1700);
 }
 
 function wrongAnswer(questionId, question) {
-	$('#announce').html(
-	"<div class='wrongAns'>" + "Wrong!" + "</div>")
-	$('#mainEvent').html(
-	"<div class='question'>" + "</div>" + "<div class='question'>" + "&nbsp;" + question.ansPoss[question.answer] + "</div>" + "<img src='" + question.wrongImage + "'>")
-     setTimeout(function() {				     	        	    
+	$('#announce').html("<div class='wrongAns'>" + "Wrong!" + "</div>")
+	$('#mainEvent').html("<div class='question'>" + "</div>" + "<div class='question'>" + "&nbsp;" + question.ansPoss[question.answer] + "</div>" + "<img src='" + question.wrongImage + "'>")
+  setTimeout(function() {				     	        	    
      showQuestion(questionId + 1);
  },1500);
 }
 
 function outofTime(questionId, question) {
-	$('#announce').html(
-	"<div class='outtaTime'>" + "No Time Remains!" + "</div>")
+	$('#announce').html("<div class='outtaTime'>" + "No Time Remains!" + "</div>")
 	$('#mainEvent').html("<div class='question'>" + "The correct answer is &nbsp;"+question.ansPoss[question.answer] + "</div>" + "<img src='" + question.wrongImage + "'>")
-    setTimeout(function() {
+  setTimeout(function() {
     	showQuestion(questionId + 1);
     },2500);
 }
@@ -175,6 +169,7 @@ function score() {
 $('#mainEvent').on('click','.restart', function() {
 	restart();
 });
+
 function restart() {
 	var counter = 16;
 	var selection = false;
