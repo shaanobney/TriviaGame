@@ -2,7 +2,7 @@
 $(document).ready(function() {
   var correctAns = 0;
   var wrongAns = 0;
-  var Unanswered = 0;
+  var noAns = 0;
   var counter = 16;
   var selection = false;
 
@@ -13,7 +13,7 @@ $(document).ready(function() {
 //QUESTION BANK WITH ASSOCIATED FILES
 var questBank = [
   {
-    question: "The mask this movie's villian wears was actually taken from a Captain Kirk costume and painted white",
+    question: "The mask this movie's villian wears was actually a Captain Kirk mask painted white",
     ansPoss: ['The Fog', 'Prince of Darkness', 'Halloween', 'The Thing', 'Vampires'],
     answer: 2,
     image: 'assets/images/halloween.gif',
@@ -121,8 +121,8 @@ function getQuest(questNum) {
 	}
 	if (counter === 0) {
 		clearInterval(countDown);
-    outofTime(questNum,question)
-    Unanswered += 1;
+    outtaTime(questNum,question)
+    noAns += 1;
       }
   }, 1000);
 }
@@ -145,9 +145,9 @@ function wrongAnswer(questNum, question) {
  },1500);
 }
 
-function outofTime(questNum, question) {
-	$('#announce').html("<div class='outtaTime'>" + "No Time Remains!" + "</div>");
-	$('#mainEvent').html("<div class='question'>" + "The correct answer is &nbsp;" + question.ansPoss[question.answer] + "</div>" + "<img src='" + question.wrongImage + "'>");
+function outtaTime(questNum, question) {
+	$('#announce').html("<div class='outtaTime'>" + "Out of Time!" + "</div>");
+	$('#mainEvent').html("<div class='question'>" + question.ansPoss[question.answer] + "</div>" + "<img src='" + question.wrongImage + "'>");
   setTimeout(function() {
     	getQuest(questNum + 1);
     },1700);
@@ -156,7 +156,7 @@ function outofTime(questNum, question) {
 function score() {
 	$('#mainEvent').html(
  	"<div class='question'>" + "RESULTS" + "</div>" + "<div class='question'>" + "Correct: &nbsp;" + correctAns + "</div>"
- 	+ "<div class='question'>" + "Incorrect: &nbsp;" + wrongAns + "</div>"+ "<div class='question'>" + "Too Slow To Answer: &nbsp;" + Unanswered + "</div>"
+ 	+ "<div class='question'>" + "Incorrect: &nbsp;" + wrongAns + "</div>"+ "<div class='question'>" + "Too Slow To Answer: &nbsp;" + noAns + "</div>"
  	+ "<button type='button' class='restart'>Again?</button>");
   // $('#time').detach();
   // $('#timer').detach();
@@ -169,7 +169,7 @@ $('#mainEvent').on('click','.restart', function() {
 function restart() {
 	var correctAns = 0;
   var wrongAns = 0;
-  var Unanswered = 0;
+  var noAns = 0;
   var counter = 16;
 	var selection = false;
   york.load();
