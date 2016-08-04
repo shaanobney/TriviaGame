@@ -7,13 +7,13 @@ $(document).ready(function() {
   var selection = false;
 
   $('#startButton').on('click', function() {
-    getQuestion(0);
+    getQuest(0);
     york.play().loop=false;
   });
 //QUESTION BANK WITH ASSOCIATED FILES
 var questBank = [
   {
-    question: "The iconic mask this movie's villian wears was actually a Captain Kirk mask painted white",
+    question: "The mask this movie's villian wears was actually taken from a Captain Kirk costume and painted white",
     ansPoss: ['The Fog', 'Prince of Darkness', 'Halloween', 'The Thing', 'Vampires'],
     answer: 2,
     image: 'assets/images/halloween.gif',
@@ -77,16 +77,14 @@ var questBank = [
   }
 ]
 
-var york = new Audio('york.mp3');
-
 //GAME FUNCTION. QUESTION ANSWER MATCHES CORRECT ARRAY CHOICE IN QUESTION BANK.
 //LOOPS THROUGH BANK UNTIL QUESTION MATCHES ARRAY LENGTH.
-function getQuestion(questionNum) {
-  if (questionNum === questBank.length) {
+function getQuest(questNum) {
+  if (questNum === questBank.length) {
     score();
 } else {
 	counter = 16;
- 	var question = questBank[questionNum];
+ 	var question = questBank[questNum];
  	selection = false;
 	var countDown = setInterval(function() {
  		counter--;
@@ -108,10 +106,10 @@ function getQuestion(questionNum) {
 			selection === true;
 			clearInterval(countDown);
 			if ($(this).data('val') === question.answer) {
-				rightAnswer(questionNum, question);
+				rightAnswer(questNum, question);
 				correctAns = correctAns + 1;
 			} else {
-        wrongAnswer(questionNum, question);
+        wrongAnswer(questNum, question);
 				wrongAns = wrongAns + 1;
 			}
 		});
@@ -123,36 +121,35 @@ function getQuestion(questionNum) {
 	}
 	if (counter === 0) {
 		clearInterval(countDown);
-    outofTime(questionNum,question)
+    outofTime(questNum,question)
     Unanswered += 1;
       }
   }, 1000);
 }
 }
 
-//EVENTS FOR ANSWER POSSIBILITIES. PLAYS VIDEO, GIVES CORRECT ANSWER, 
-
-function rightAnswer(questionNum, question) {
+//EVENTS FOR ANSWER POSSIBILITIES. PLAYS VIDEO, GIVES CORRECT ANSWER, WRONG ANSWER, OUT OF TIME. 
+function rightAnswer(questNum, question) {
 	$('#announce').html("<div class='correctAns'>" + "Correct!" + "</div>");
 	$('#mainEvent').html("<div class='question'>" + "</div>" + "<img src='" + question.image + "'></div>");
   setTimeout(function() {
-    getQuestion(questionNum + 1);
+    getQuest(questNum + 1);
 	}, 1700);
 }
 
-function wrongAnswer(questionNum, question) {
+function wrongAnswer(questNum, question) {
 	$('#announce').html("<div class='wrongAns'>" + "Wrong!" + "</div>");
 	$('#mainEvent').html("<div class='question'>" + "</div>" + "<div class='question'>" + "&nbsp;" + question.ansPoss[question.answer] + "</div>" + "<img src='" + question.wrongImage + "'>");
   setTimeout(function() {				     	        	    
-     getQuestion(questionNum + 1);
+     getQuest(questNum + 1);
  },1500);
 }
 
-function outofTime(questionNum, question) {
+function outofTime(questNum, question) {
 	$('#announce').html("<div class='outtaTime'>" + "No Time Remains!" + "</div>");
 	$('#mainEvent').html("<div class='question'>" + "The correct answer is &nbsp;" + question.ansPoss[question.answer] + "</div>" + "<img src='" + question.wrongImage + "'>");
   setTimeout(function() {
-    	getQuestion(questionNum + 1);
+    	getQuest(questNum + 1);
     },1700);
 }
 
@@ -176,15 +173,17 @@ function restart() {
   var counter = 16;
 	var selection = false;
   york.load();
-	getQuestion(0);
+	getQuest(0);
   york.play().loop=false;
 }
 })
 
 $('#pause').on('click', function() {
   $(this).find('#vol').toggleClass('glyphicon-volume-up').toggleClass('glyphicon-volume-off');
-  york.volume = 0;
+  york.volume = 0.0;
 });
+
+var york = new Audio('york.mp3');
 
 
 
