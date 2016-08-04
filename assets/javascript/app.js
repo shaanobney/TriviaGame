@@ -1,8 +1,16 @@
+//VARIABLES FOR KEEPING SCORE/QUESTIONS
+$(document).ready(function() {
+  var correctAns = 0;
+  var wrongAns = 0;
+  var Unanswered = 0;
+  var counter = 16;
+  var selection = false;
 
-
+  $('#startButton').on('click', function() {
+    getQuestion(0);
+    york.play().loop=false;
+  });
 //QUESTION BANK WITH ASSOCIATED FILES
-var york = new Audio('york.mp3');
-
 var questBank = [
   {
     question: "The iconic mask this movie's villian wears was actually a Captain Kirk mask painted white",
@@ -69,23 +77,11 @@ var questBank = [
   }
 ]
 
-//VARIABLES FOR KEEPING SCORE/QUESTIONS
-$(document).ready(function() {
-	var correctAns = 0;
-  var wrongAns = 0;
-  var Unanswered = 0;
-  var counter = 16;
-	var selection = false;
-
-  $('#startButton').on('click', function() {
-    showQuestion(0);
-    york.play().loop=false;
-  });
-
+var york = new Audio('york.mp3');
 
 //GAME FUNCTION. QUESTION ANSWER MATCHES CORRECT ARRAY CHOICE IN QUESTION BANK.
 //LOOPS THROUGH BANK UNTIL QUESTION MATCHES ARRAY LENGTH.
-function showQuestion(questionNum) {
+function getQuestion(questionNum) {
   if (questionNum === questBank.length) {
     score();
 } else {
@@ -134,11 +130,13 @@ function showQuestion(questionNum) {
 }
 }
 
+//EVENTS FOR ANSWER POSSIBILITIES. PLAYS VIDEO, GIVES CORRECT ANSWER, 
+
 function rightAnswer(questionNum, question) {
 	$('#announce').html("<div class='correctAns'>" + "Correct!" + "</div>");
 	$('#mainEvent').html("<div class='question'>" + "</div>" + "<img src='" + question.image + "'></div>");
   setTimeout(function() {
-    showQuestion(questionNum + 1);
+    getQuestion(questionNum + 1);
 	}, 1700);
 }
 
@@ -146,7 +144,7 @@ function wrongAnswer(questionNum, question) {
 	$('#announce').html("<div class='wrongAns'>" + "Wrong!" + "</div>");
 	$('#mainEvent').html("<div class='question'>" + "</div>" + "<div class='question'>" + "&nbsp;" + question.ansPoss[question.answer] + "</div>" + "<img src='" + question.wrongImage + "'>");
   setTimeout(function() {				     	        	    
-     showQuestion(questionNum + 1);
+     getQuestion(questionNum + 1);
  },1500);
 }
 
@@ -154,7 +152,7 @@ function outofTime(questionNum, question) {
 	$('#announce').html("<div class='outtaTime'>" + "No Time Remains!" + "</div>");
 	$('#mainEvent').html("<div class='question'>" + "The correct answer is &nbsp;" + question.ansPoss[question.answer] + "</div>" + "<img src='" + question.wrongImage + "'>");
   setTimeout(function() {
-    	showQuestion(questionNum + 1);
+    	getQuestion(questionNum + 1);
     },1700);
 }
 
@@ -163,6 +161,8 @@ function score() {
  	"<div class='question'>" + "RESULTS" + "</div>" + "<div class='question'>" + "Correct: &nbsp;" + correctAns + "</div>"
  	+ "<div class='question'>" + "Incorrect: &nbsp;" + wrongAns + "</div>"+ "<div class='question'>" + "Too Slow To Answer: &nbsp;" + Unanswered + "</div>"
  	+ "<button type='button' class='restart'>Again?</button>");
+  // $('#time').detach();
+  // $('#timer').detach();
 }
 
 $('#mainEvent').on('click','.restart', function() {
@@ -170,13 +170,13 @@ $('#mainEvent').on('click','.restart', function() {
 });
 
 function restart() {
-	var counter = 16;
-	var selection = false;
 	var correctAns = 0;
-	var wrongAns = 0;
-	var Unanswered = 0;
+  var wrongAns = 0;
+  var Unanswered = 0;
+  var counter = 16;
+	var selection = false;
   york.load();
-	showQuestion(0);
+	getQuestion(0);
   york.play().loop=false;
 }
 })
