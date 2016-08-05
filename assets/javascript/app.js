@@ -158,8 +158,10 @@ function score() {
  	"<div class='question'>" + "RESULTS" + "</div>" + "<div class='question'>" + "Correct: &nbsp;" + correctAns + "</div>"
  	+ "<div class='question'>" + "Incorrect: &nbsp;" + wrongAns + "</div>"+ "<div class='question'>" + "Too Slow To Answer: &nbsp;" + noAns + "</div>"
  	+ "<button type='button' class='restart'>Again?</button>");
-  // $('#time').detach();
-  // $('#timer').detach();
+  $('#time').empty();
+  $('#timer').empty();
+  $('.correctAns').empty();
+  $('.wrongAns').empty();
 }
 
 $('#mainEvent').on('click','.restart', function() {
